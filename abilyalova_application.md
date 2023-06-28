@@ -88,7 +88,9 @@ Kanbana
 [ ИНСТРУМЕНТЫ РАЗРАБОТКИ, ИНФОРМАЦИЯ О БД ]
 
 Kotlin / Android Studio - для разработки под ОС Android
+
 Backend - Python
+
 PostgreSQL - БД
 
 [ ЭТАПЫ РАЗРАБОТКИ ]
