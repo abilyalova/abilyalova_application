@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".flows.main.createdesk.CreateDeskFragment">
+
+    <EditText
+        android:id="@+id/nameED"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:autofillHints=""
+        android:hint="Название "
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/save_desk_button" />
+
+    <Spinner
+        android:id="@+id/typeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="Type"
+        app:layout_constraintEnd_toEndOf="@+id/nameED"
+        app:layout_constraintStart_toStartOf="@+id/nameED"
+        app:layout_constraintTop_toBottomOf="@+id/nameED" />
+
+    <EditText
+        android:id="@+id/Date"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:autofillHints=""
+        android:clickable="true"
+        android:focusable="false"
+        android:hint="Дедлайн"
+        android:inputType="datetime"
+        app:layout_constraintEnd_toEndOf="@+id/typeSpinner"
+        app:layout_constraintStart_toStartOf="@+id/typeSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/typeSpinner" />
+
+
+    <TextView
+        android:id="@+id/chooseDeskTypePlaceholder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        android:minLines="15"
+        android:scrollbars="vertical"
+        android:text="Выберите тип доски"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descriptionEditText" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/descriptionEditText"
+        app:layout_constraintStart_toStartOf="@id/descriptionEditText"
+        app:layout_constraintTop_toBottomOf="@id/descriptionEditText">
+
+        <include
+            android:id="@+id/toDoSection"
+            layout="@layout/todo_section"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/kanbanSection"
+            layout="@layout/kanban_section"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/matrixSection"
+            layout="@layout/matrix_section"
+            android:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/save_desk_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="✓"
+        app:layout_constraintEnd_toEndOf="@+id/nameED"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/nameED"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/descriptionEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Описание"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/Date"
+        app:layout_constraintStart_toStartOf="@+id/Date"
+        app:layout_constraintTop_toBottomOf="@+id/Date" />
+</androidx.constraintlayout.widget.ConstraintLayout>

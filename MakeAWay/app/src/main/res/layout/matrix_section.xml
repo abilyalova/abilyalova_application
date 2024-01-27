@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--    <Button-->
+    <!--        android:id="@+id/matrixUIAddTaskButton"-->
+    <!--        style="@style/Widget.AppCompat.Button.Small"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="38dp"-->
+    <!--        android:text="+"-->
+    <!--        android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+    <!--        app:layout_constraintEnd_toStartOf="@id/guideline_vertical"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/matrixUNIAddTaskButton"-->
+    <!--        style="@style/Widget.AppCompat.Button.Small"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="38dp"-->
+    <!--        android:text="+"-->
+    <!--        android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+    <!--        app:layout_constraintEnd_toStartOf="@id/guideline_vertical"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/matrixNUIAddTaskButton"-->
+    <!--        style="@style/Widget.AppCompat.Button.Small"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="38dp"-->
+    <!--        android:text="+"-->
+    <!--        android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/matrixNUNIAddTaskButton"-->
+    <!--        style="@style/Widget.AppCompat.Button.Small"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="38dp"-->
+    <!--        android:layout_marginEnd="4dp"-->
+    <!--        android:text="+"-->
+    <!--        android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal" />-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/urgentImportantRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal"
+        app:layout_constraintEnd_toStartOf="@id/notUrgentImportantRecyclerView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewUI"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notUrgentImportantRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical"
+        app:layout_constraintTop_toBottomOf="@id/textViewNUI" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/urgentNotImportantRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewUNI"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notUrgentNotImportantRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical"
+        app:layout_constraintTop_toBottomOf="@id/textViewNUNI" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/textViewUI"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:gravity="center_vertical"
+        android:text="Срочно | Важно"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewNUI"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:gravity="center_vertical"
+        android:text="Несрочно | Важно"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewUNI"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:gravity="center_vertical"
+        android:text="Срочно | Неважно"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal" />
+
+    <TextView
+        android:id="@+id/textViewNUNI"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:gravity="center_vertical"
+        android:text="Несрочно | Неважно"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addMatrixTaskButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_add"
+        app:tint="@color/white" />
+</androidx.constraintlayout.widget.ConstraintLayout>
